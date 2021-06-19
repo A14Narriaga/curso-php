@@ -1,11 +1,16 @@
 <?php 
 
 require('./controller.php');
+require('../database/database.php');
 
 class CuestionarioController extends Controller {
 
+    private $db;
+
     public function __construct() {
         parent::__construct('cuestionario');
+        $this->db = new database();
+        $this->db->getConnection();
         $params = $this->getParams();
         if(count($params) > 0) {
             $nameFunction = $params[0];
@@ -20,20 +25,42 @@ class CuestionarioController extends Controller {
             }
         }
     }
+
     public function create() {
-        print_r("Create");
+        $data = $this->getData();
+        $sql = "INSERT INTO cuestionario(nombre, clave) VALUE('$data->nombre','$data->clave')";
+        $this->db->create($sql) ? 
+        print_r("Cuestionario creado !!") : 
+        print_r("Error al crear el cuestionario !!");
     }
+
     public function read() {
-        print_r("Read");
+        $sql = "SELECT * FROM cuestionario";
+        $result = $this->db->read($sql);
+        print_r(json_encode($result));
     }
+
     public function update() {
-        print_r("Update");
+        $data = $this->getData();
+        $sql = "UPDATE cuestionario SET nombre = '$data->nombre' WHERE clave = '$data->clave'";
+        $this->db->update($sql) ? 
+        print_r("Cuestionario actualizado !!") :
+        print_r("Error al actualizar el cuestionario !!");
     }
+
     public function delete() {
-        print_r("Delete");
+        $data = $this->getData();
+        $sql = "DELETE FROM cuestionario WHERE clave = '$data->clave'";
+        $this->db->delete($sql) ? 
+        print_r("Cuestionario eliminado !!") : 
+        print_r("Error al eliminar el cuestionario !!");
     }
+
     public function search() {
-        print_r("Search");
+        $data = $this->getData();
+        $sql = "SELECT * FROM cuestionario WHERE clave = '$data->clave'";
+        $result = $this->db->read($sql);
+        print_r(json_encode($result));
     }
 }
 

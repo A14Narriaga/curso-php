@@ -22,12 +22,15 @@ class Controller{
         if(strlen($url) == 0) $this->params = [];
         else $this->params = explode( "/", substr( $url, 1, strlen($url)) );
     }
+
     public function getMethod(){
         return $this->method;
     }
+
     public function getData(){
         return $this->data;
     }
+    
     public function getParams(){
         return $this->params;
     }

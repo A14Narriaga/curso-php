@@ -18,10 +18,7 @@ function strContains($name) {
                     <a class="nav-link <?php echo strContains("index") ? " active" : ""; ?>" aria-current="page" href="index.php">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?php echo strContains("nuevo") ? " active" : ""; ?>" aria-current="page" href="nuevo.php">Nuevo cuestionario</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link <?php echo strContains("ver") ? " active" : ""; ?>" aria-current="page" href="ver.php">Ver cuestionario</a>
+                    <a class="nav-link <?php echo strContains("respuestas") ? " active" : ""; ?>" aria-current="page" href="respuestas.php">Respuestas</a>
                 </li>
             </ul>
         </div>

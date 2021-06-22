@@ -1,11 +1,18 @@
-body {
-    background-color: rgb(211, 211, 211);
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 a {
     text-decoration: none;
     text-align: center;
     font-size: 1.2rem;
+}
+
+body {
+    background-color: rgb(211, 211, 211);
 }
 
 .container {
@@ -66,4 +73,51 @@ a {
 
 .cuestionario p {
     font-size: 1.1rem;
+}
+
+/* Nuevo */
+
+.newPregunta {
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: rgba(0, 255, 170, 0.356);
+}
+
+.headCuestionario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.headCuestionario h5 {
+    margin: 0;
+}
+
+.contentCuestionario {
+    background-color: rgba(255, 255, 255, 0.315);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.myInput {
+    background-color: rgba(255, 0, 0, 0);
+    border: 0;
+    border-bottom: black solid 2px;
+}
+
+.myInputOpc {
+    background-color: rgba(255, 0, 0, 0);
+    border: 0;
+}
+
+.add i:hover {
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: 1px solid black;
+}
+
+.option {
+    display: flex;
+    align-items: center;
 }
